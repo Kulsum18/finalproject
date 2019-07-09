@@ -1,0 +1,59 @@
+{% load static %}
+{% include "snippets/styles.html" %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container-fluid">
+  <div class="col-md-12">
+    <ul class="nav ">
+      <li class="nav-item active" >
+        <a href="#" class="fa fa-facebook nav-link"></a>
+      </li>
+      <li class="nav-item active" >
+
+        <a href="#" class="fa fa-twitter nav-link"></a>
+      </li>
+      <li class="nav-item active" >
+        <a href="#" class="fa fa-instagram nav-link"></a>
+      </li>
+      <li class="nav-item active" >
+        <a href="#" class="fa fa-google nav-link"></a>
+      </li>
+    </ul>
+  </div>
+</div>
+{% include "snippets/navbar.html" %}
+<div >
+  {% block page_content_1 %}{% endblock %}
+</div>
+
+<div class="container">
+  {% block page_content_2 %}{% endblock %}
+</div>
+
+<div>
+  {% block page_content_3 %}{% endblock %}
+</div>
+
+<div>
+  {% block page_content_4 %}{% endblock %}
+</div>
+
+<div>
+  {% block page_content_5 %}{% endblock %}
+</div>
+
+<div>
+  {% block page_content_6 %}{% endblock %}
+</div>
+
+<div>
+  {% block page_content_7 %}{% endblock %}
+</div>
+
+<div>
+  {% block page_content_8 %}{% endblock %}
+</div>
+<hr>
+{% include "snippets/footer.html" %}
+
+{% include "snippets/scripts.html" %}

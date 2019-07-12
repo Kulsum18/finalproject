@@ -1,35 +1,41 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'main_index' %}">
-                <img src="{% static "/img/logo.png" %}" width="120" height="40" alt="">
-              </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="{% url 'main_index' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'project_index' %}">Member</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'blog_index' %}">Blog</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="{% url 'tentangkami_index' %}">Tentang Kami</a>
-              </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="{% url 'pendaftaranmember_index' %}">Membership</a>
-                </li>
-            </ul>
-            <form class="form-inline">
-              <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="button">Masuk</button>
-            </form>
-          </div>
-        </div>
-      
-      </nav>
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'main_index' %}">
+      <img src="{% static "/img/logo.png" %}" width="120" height="40" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'main_index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'tentangkami_index' %}">Tentang Kami</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'project_index' %}">Member</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Galeri</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'pendaftaranmember_index' %}">Membership</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Bogrades Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'blog_index' %}">Artikel</a>
+        </li>
+      </ul>
+      <form class="form-inline">
+        <button class="btn btn-sm btn-outline-secondary my-2 my-sm-0" type="button">Login</button>
+      </form>
+    </div>
+  </div>
+</nav>

@@ -1,69 +1,85 @@
 {% load static %}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 <div style="padding: 20px">
-		<div class="container text-center">
-				<div class="container-fluid">
+	<div class="container text-center">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-12">
+							<h3>
+								Galeri Foto
+							</h3>
+						</div>
+					</div>
+					<div class="img-thumbnail">
 						<div class="row">
-							<div class="col-md-12">
-								<div class="row">
-									<div class="col-md-12">
-										<h3>
-											Galeri Foto
-										</h3>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-4">
-										<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
-									</div>
-									<div class="col-md-4">
-										<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
-									</div>
-									<div class="col-md-4">
-										<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-4">
-										<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
-									</div>
-									<div class="col-md-4">
-										<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
-									</div>
-									<div class="col-md-4">
-										<img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<nav>
-											<ul class="pagination">
-												<li class="page-item">
-													<a class="page-link" href="#">Previous</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">1</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">2</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">3</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">4</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">5</a>
-												</li>
-												<li class="page-item">
-													<a class="page-link" href="#">Next</a>
-												</li>
-											</ul>
-										</nav>
-									</div>
-								</div>
+							<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+								<a href="{% static 'img/wira1.jpg' %}" class="fancybox" rel="ligthbox">
+									<img src="{% static 'img/wira1.jpg' %}" class="zoom img-fluid " alt="">
+
+								</a>
+							</div>
+							<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+								<a href="{% static 'img/salma2.png' %}" class="fancybox" rel="ligthbox">
+									<img src="{% static 'img/salma2.png' %}" class="zoom img-fluid" alt="">
+								</a>
+							</div>
+
+							<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+								<a href="{% static 'img/rizki1.png' %}" class="fancybox" rel="ligthbox">
+									<img src="{% static 'img/rizki1.png' %}" class="zoom img-fluid " alt="">
+								</a>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<img class="img-thumbnail" alt="Bootstrap Image Preview"
+									src="{% static 'img/rizki2.png' %}" />
+							</div>
+							<div class="col-md-4">
+								<img class="img-thumbnail" alt="Bootstrap Image Preview"
+									src="{% static 'img/rizki2.png' %}" />
+							</div>
+							<div class="col-md-4">
+								<img class="img-thumbnail" alt="Bootstrap Image Preview"
+									src="{% static 'img/rizki2.png' %}" />
 							</div>
 						</div>
 					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<nav>
+								<ul class="pagination">
+									<li class="page-item">
+										<a class="page-link" href="#">Previous</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">1</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">2</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">3</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">4</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">5</a>
+									</li>
+									<li class="page-item">
+										<a class="page-link" href="#">Next</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+	</div>
 </div>

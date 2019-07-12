@@ -10,27 +10,27 @@
 
     {% for post in posts %}
 
-        <h2><a href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
+    <h2><a href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
 
-        <small>
+    <small>
 
-            {{ post.created_on.date }} |&nbsp;
+        {{ post.created_on.date }} |&nbsp;
 
-            Categories:&nbsp;
+        Categories:&nbsp;
 
-            {% for category in post.categories.all %}
+        {% for category in post.categories.all %}
 
-            <a href="{% url 'blog_category' category.name %}">
+        <a href="{% url 'blog_category' category.name %}">
 
-                {{ category.name }}
+            {{ category.name }}
 
-            </a>&nbsp;
+        </a>&nbsp;
 
-            {% endfor %}
+        {% endfor %}
 
-        </small>
+    </small>
 
-        <p>{{ post.body | slice:":400" }}...</p>
+    <p>{{ post.body | slice:":400" }}...</p>
 
     {% endfor %}
 

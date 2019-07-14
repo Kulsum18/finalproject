@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block page_content_1 %}
 <div class="container">
     <div class="col-md-8 offset-md-2">
@@ -12,6 +13,10 @@
             </a>&nbsp;
             {% endfor %}
         </small>
+        <div class="container" style="float: left; width: 50%;">
+            <img src="{{ post.image.url }}">
+        </div>
+        
         <p>{{ post.body | linebreaks }}</p>
         <h3>Leave a comment:</h3>
         <form action="/blog/{{ post.pk }}/" method="post">

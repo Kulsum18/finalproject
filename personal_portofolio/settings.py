@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'personal_portofolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["templates"],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,6 +71,8 @@ TEMPLATES = [
         },
     },
 ]
+
+BOOTSTRAP_ADMIN_SIDEBAR_MENU = 'False'
 
 WSGI_APPLICATION = 'personal_portofolio.wsgi.application'
 
@@ -126,3 +129,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [ 
     os.path.join(BASE_DIR, 'static'), 
 ]
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

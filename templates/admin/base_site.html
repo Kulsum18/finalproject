@@ -1,0 +1,11 @@
+{% extends 'admin/base_site.html' %}
+{% load static %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Bogrades') }} {% endblock %}
+
+{% block branding %}
+<a href="{% url 'admin:index' %}" class="django-admin-logo">
+    <!--Django Administration-->
+    <img height="40" style="padding-top: 10px" src="{% static 'bootstrap_admin/img/logo-140x60.png' %}" alt="{{ site_header|default:_('Bogrades Dashboard') }}">
+</a>
+{% endblock branding %}

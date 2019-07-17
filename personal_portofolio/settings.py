@@ -39,9 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tentangkami',
-    'pendaftaranmember',
+    'galerifoto',
+    'account',
+    'user_registration',
     'projects',
+    'cart',
+    'orders',
+    'bogrades_shop',
     'blog',
+    'dashboard_user',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +65,7 @@ ROOT_URLCONF = 'personal_portofolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ["templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,3 +139,9 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+LOGIN_REDIRECT_URL = 'dashboarduser'
+
+LOGOUT_REDIRECT_URL = '/'
+
+CART_SESSION_ID = 'cart'

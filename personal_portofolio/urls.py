@@ -25,8 +25,15 @@ urlpatterns = [
     path('',views.index, name='main_index'),
     path('tentangkami/', include("tentangkami.urls")),
     path('projects/', include("projects.urls")),
-    path('pendaftaranmember/', include("pendaftaranmember.urls")),
+    path('galerifoto/', include("galerifoto.urls")),
+    path('account/', include("account.urls")),
+    path('user_registration/', include("user_registration.urls")),
     path('blog/', include("blog.urls")),
+    path('cart', include('cart.urls', namespace='cart')),
+    path('orders/', include('orders.urls', namespace='orders')),
+    path('', include("bogrades_shop.urls", namespace='bogrades_shop')),
+    path('dashboard_user/', include("dashboard_user.urls")),
+    path('dashboard_user/', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:

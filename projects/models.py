@@ -1,8 +1,11 @@
 from django.db import models
 
 # Create your models here.
-class Project(models.Model):
+class Portofolio(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    technology = models.CharField(max_length=20)
-    image = models.FilePathField(path="/img")
+    image = models.FilePathField(path="/portofolio")
+
+class ImageProfile(models.Model):
+    username = models.CharField(max_length=100)
+    profileimage = models.FilePathField(path="/photoprofile")    

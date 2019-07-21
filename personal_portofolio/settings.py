@@ -15,6 +15,8 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'personal_portofolio/static/js', 'serviceworker.js')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -38,17 +40,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'tentangkami',
     'galerifoto',
     'account',
-    'user_registration',
     'projects',
     'cart',
     'orders',
     'bogrades_shop',
     'blog',
     'dashboard_user',
+    'pwa',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -65,7 +70,7 @@ ROOT_URLCONF = 'personal_portofolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["templates"],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -140,7 +145,9 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_REDIRECT_URL = 'dashboarduser'
+LOGIN_REDIRECT_URL = 'dashboard_user'
+
+LOGIN_URL = '/login/'
 
 LOGOUT_REDIRECT_URL = '/'
 

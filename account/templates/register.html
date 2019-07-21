@@ -1,134 +1,219 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% load static %}
+
 {% block page_content_1 %}
 {% include 'snippets/main_content/slider.html' %}
+<br>
 <div class="container">
     <form action="{% url 'user_register' %}" method="post">
         {% csrf_token %}
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-                <div class="panel-body">
-                    {% if error_message %}
-                        <p class="bg-danger p-d ml-b">{{ error_message }}</p>
-                    {% endif %}
-                   
-                    <div class="form-group clearfix">
-                        <label for="{{ form.username.id_for_label }}" class="col-md-4 control-label text-right">Username<span class="text-red">*</span>:</label>
+        <div class="panel-body">
+            {% if error_message %}
+            <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+            {% endif %}
+            <div class="col-md-12"><h3>Syarat dan Ketentuan Menjadi Member Bogrades</h3>
+            <li>Asli Warga/Berdomisili di Kota/Kabupaten Bogor</li>
+            <li>Mengisi Formulir Pendaftaran</li>
+            <li>Mengupload Portofolio setelah sukses mengisi Formulir Pendaftaran</li>
+            <li>Mengupload Foto Diri setelah sukses mengisi Formulir Pendaftaran</li>
+            </div>
+            <br>
+            <div class="col-md-12"><h3>Form Pendaftaran Member Bogrades</h3></div>
+            <div class="col-md-12">
+                {{ form.username|as_crispy_field }}
+
+                {{ form.email|as_crispy_field }}
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form.password|as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.password_repeat|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form.first_name|as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.last_name|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form.tgl_lahir|as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.jenis_kelamin|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form.alamat|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form.phone_number|as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.id_instagram|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form.fb_url|as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.web_portofolio_url|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        {{ form.pekerjaan|as_crispy_field }}
+                    </div>
+                    <div class="col-md-4">
+                        {{ form.bidang_desain|as_crispy_field }}
+                    </div>
+                    <div class="col-md-4">
+                        {{ form.program_desain|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form.deskripsi_diri|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form.tujuan_gabung_bogrades|as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.harapan_gabung_bogrades|as_crispy_field }}
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <div class="form-group clearfix">
+                        <label for="{{ form.username.id_for_label }}" class="col-md-4 control-label text-right"><span class="text-red"></span></label>
                         <div class="col-md-6">
-                            {{ form.username }}
+                            {{ form.username|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
-                        <label for="{{ form.email.id_for_label }}" class="col-md-4 control-label text-right">Email<span class="text-red">*</span>:</label>
+                        <label for="{{ form.email.id_for_label }}" class="col-md-4 control-label text-right"><span class="text-red"></span></label>
                         <div class="col-md-6">
-                            {{ form.email }}
+                            {{ form.email|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.password.id_for_label }}" class="col-md-4 control-label text-right">Password<span class="text-red">*</span>:</label>
                         <div class="col-md-6">
-                            {{ form.password }}
+                            {{ form.password|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.password_repeat.id_for_label }}" class="col-md-4 control-label text-right">Confirm password:</label>
                         <div class="col-md-6">
-                            {{ form.password_repeat }}
+                            {{ form.password_repeat|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.first_name.id_for_label }}" class="col-md-4 control-label text-right">First Name:</label>
                         <div class="col-md-6">
-                            {{ form.first_name }}
+                            {{ form.first_name|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.last_name.id_for_label }}" class="col-md-4 control-label text-right">Last Name:</label>
                         <div class="col-md-6">
-                            {{ form.last_name }}
+                            {{ form.last_name|as_crispy_field }}
                         </div>
                     </div>
 
                     <div class="form-group clearfix">
                         <label for="{{ form.tgl_lahir.id_for_label }}" class="col-md-4 control-label text-right">Tanggal Lahir:</label>
                         <div class="col-md-6">
-                            {{ form.tgl_lahir }}
+                            {{ form.tgl_lahir|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
-                        <label for="{{ form.jenis_kelamin.id_for_label }}" class="col-md-4 control-label text-right">Jenis Kelamin:</label>
+                        <label for="{{ form.jenis_kelamin.id_for_label }}" class="col-md-4 control-label text-right"></label>
                         <div class="col-md-6">
-                            {{ form.jenis_kelamin }}
+                            {{ form.jenis_kelamin|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
-                        <label for="{{ form.alamat.id_for_label }}" class="col-md-4 control-label text-right">Alamat:</label>
+                        <label for="{{ form.alamat.id_for_label }}" class="col-md-4 control-label text-right"></label>
                         <div class="col-md-6">
-                            {{ form.alamat }}
+                            {{ form.alamat|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
-                        <label for="{{ form.phone_number.id_for_label }}" class="col-md-4 control-label text-right">Nomor Hp:</label>
+                        <label for="{{ form.phone_number.id_for_label }}" class="col-md-4 control-label text-right"></label>
                         <div class="col-md-6">
-                            {{ form.phone_number }}
+                            {{ form.phone_number|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.id_instagram.id_for_label }}" class="col-md-4 control-label text-right">ID Instagram</label>:</label>
                         <div class="col-md-6">
-                            {{ form.id_instagram }}
+                            {{ form.id_instagram|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.fb_url.id_for_label }}" class="col-md-4 control-label text-right">URL FB:</label>
                         <div class="col-md-6">
-                            {{ form.fb_url }}
+                            {{ form.fb_url|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.web_portofolio_url.id_for_label }}" class="col-md-4 control-label text-right">Portofolio URL:</label>
                         <div class="col-md-6">
-                            {{ form.web_portofolio_url }}
+                            {{ form.web_portofolio_url|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.pekerjaan.id_for_label }}" class="col-md-4 control-label text-right">Pekerjaan:</label>
                         <div class="col-md-6">
-                            {{ form.pekerjaan }}
+                            {{ form.pekerjaan|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.bidang_desain.id_for_label }}" class="col-md-4 control-label text-right">Bidang Desain:</label>
                         <div class="col-md-6">
-                            {{ form.bidang_desain }}
+                            {{ form.bidang_desain|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.program_desain.id_for_label }}" class="col-md-4 control-label text-right">Program Desain:</label>
                         <div class="col-md-6">
-                            {{ form.program_desain }}
+                            {{ form.program_desain|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.deskripsi_diri.id_for_label }}" class="col-md-4 control-label text-right">Deskripsi Diri:</label>
                         <div class="col-md-6">
-                            {{ form.deskripsi_diri }}
+                            {{ form.deskripsi_diri|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.tujuan_gabung_bogrades.id_for_label }}" class="col-md-4 control-label text-right">Tujuan Gabung Bogrades:</label>
                         <div class="col-md-6">
-                            {{ form.tujuan_gabung_bogrades }}
+                            {{ form.tujuan_gabung_bogrades|as_crispy_field }}
                         </div>
                     </div>
                     <div class="form-group clearfix">
                         <label for="{{ form.harapan_gabung_bogrades.id_for_label }}" class="col-md-4 control-label text-right">Harapan Gabung Bogrades:</label>
                         <div class="col-md-6">
-                            {{ form.harapan_gabung_bogrades }}
+                            {{ form.harapan_gabung_bogrades|as_crispy_field }}
                         </div>
-                    </div>
-                    <!-- <div class="form-group clearfix">
+                    </div> -->
+            <!-- <div class="form-group clearfix">
                         <label for="{{ form.upload_foto_diri.id_for_label }}" class="col-md-4 control-label text-right">Upload Foto Diri:</label>
                         <div class="col-md-6">
                             {{ form.upload_foto_diri }}
@@ -141,12 +226,12 @@
                         </div>
                     </div>
                      -->
-                    <div class="col-md-6 col-md-offset-4">
-                        <input type="submit" value="Register" class="btn btn-success">
-                    </div>
-                </div>
+            <div class="col-md-6 col-md-offset-4">
+                <input type="submit" value="Register" class="btn btn-success">
             </div>
         </div>
+
     </form>
 </div>
+<br>
 {% endblock %}

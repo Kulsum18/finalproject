@@ -1,5 +1,5 @@
 {% load static %}
-<div style="padding: 5%">
+<div style="padding: 5%" id="#section_artikel">
     <div class="container text-center">
         <div class="container-fluid">
             <div class="row">
@@ -9,23 +9,24 @@
                             <h3>
                                 Artikel
                             </h3>
+                            <br><br>
                         </div>
                     </div>
                     <div class="row">
 
                         {% for post in posts %}
-                
-                        <div class="col-md-4">
+                        
+                        <div class="col-md-3">
                 
                             <div class="card mb-2">
                 
-                                <img class="card-img-top" src="{{ post.image.url }}" style="height:300px; width: 100%; resize: both;">
+                                <img class="card-img-top" src="{{ post.image.url }}" style="height:200px; width: 100%; resize: both;">
                 
                                 <div class="card-body">
                 
-                                    <h5 class="card-title">{{ post.title }}</h5>
+                                    <h6 class="card-title" style="font-weight:bold">{{ post.title }}</h6>
                 
-                                    <p class="card-text">{{ post.body | slice:":110" }}...</p>
+                                    <p class="card-text">{{ post.body | slice:":100" }}...</p>
                 
                                     <a href="{% url 'blog_detail' post.pk %}" class="btn btn-primary">
                                         Read More

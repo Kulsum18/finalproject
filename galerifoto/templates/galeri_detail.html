@@ -1,6 +1,9 @@
 {% load static %}
 {% block page_content_1 %}
-<div class="container">
-    <div class="col-md-8 offset-md-2">
-        <img src="{{ galeripost.image.url }}" class="img-fluid" style="height:50%; width: 100%; resize: both" alt="">
+<div class="container-fluid">
+        <div class="img-thumbnail">
+                <img src="{{ galeripost.image.url }}" style="height:100%; width: 100%; resize: both" alt="">
+        </div>        
+</div>
+    
 {% endblock %}

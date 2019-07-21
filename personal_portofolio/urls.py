@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 
 from . import views
 
@@ -27,13 +28,15 @@ urlpatterns = [
     path('projects/', include("projects.urls")),
     path('galerifoto/', include("galerifoto.urls")),
     path('account/', include("account.urls")),
-    path('user_registration/', include("user_registration.urls")),
+    path('login/', auth_views.LoginView, {'template_name': 'login.html'}, name='login'),
+    path('logout/', auth_views.LogoutView, {'template_name': 'logged_out.html'}, name='logout'),
     path('blog/', include("blog.urls")),
     path('cart', include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
     path('', include("bogrades_shop.urls", namespace='bogrades_shop')),
-    path('dashboard_user/', include("dashboard_user.urls")),
-    path('dashboard_user/', include('django.contrib.auth.urls')),
+    path('dashboard_user/', include("dashboard_user.urls", namespace='dashboard')),
+    path('',include('pwa.urls')),
+    # path('dashboard_user/', include('django.contrib.auth.urls')),
 ]
 
 if settings.DEBUG:

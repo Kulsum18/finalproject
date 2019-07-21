@@ -1,28 +1,22 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}
-Your Shopping Cart| Checkout
-{% endblock %}
-
-{% block page_content_1 %}
+{% extends 'base.html' %} {% load static %} {% block title %} Your Shopping Cart| Checkout {% endblock %} {% block page_content_1 %}
 <div class="container">
     <div class="row" style="margin-top: 6%">
         <div class="col-md-8">
             <h4 class="page-header">Checkout</h4>
             <form action="." method="post">
-                {% csrf_token %}
-                {{ form.as_p }}<br>
+                {% csrf_token %} {{ form.as_p }}<br>
                 <input type="submit" class="btn btn-primary" value="Submit order">
             </form>
+            <br>
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <div class="page-header">
                 Your Order
             </div>
             <ul class="list-group">
                 {% for item in cart %}
                 <li class="list-group-item">
-                    {{ item.quantity }} x {{ item.product.name }}
+                    {{ item.quantity }} * {{ item.product.name }}
                     <span>Rp. {{ item.total_price }}</span>
                 </li>
                 {% endfor %}
@@ -30,7 +24,7 @@ Your Shopping Cart| Checkout
                 <li class="list-group-item active">Total Cost: Rp. {{ cart.get_total_price }}</li>
             </ul>
 
-        </div>
+        </div> -->
     </div>
 </div>
 {% endblock %}

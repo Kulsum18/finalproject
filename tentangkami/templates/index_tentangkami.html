@@ -1,7 +1,4 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block page_content_1 %}
+{% extends "base.html" %} {% load static %} {% block page_content_1 %}
 <div class="row">
     <div class="col-md-12">
         <img class="img-fluid" src="{% static 'img/header2.jpg' %}" style="height: 550px; width: 100%">
@@ -19,14 +16,9 @@
                             Sejarah
                         </h3>
                         <p>
-                            Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget
-                            sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem
-                            sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor.
-                            Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin
-                                consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam
-                                velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus.
-                            <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices
-                                massa, et feugiat ipsum consequat eu.</small>
+                            Bogrades merupakan sebuah komunitas yang menjadi wadah untuk para desainer grafis Bogor
+                            berkumpul dan berbagi ilmu. Bogrades didirikan pada tahun 2014 oleh Aldo Picaso yang
+                            merupakan salah seorang admin di Komunitas IGD (Indonesia Graphic Design)
                         </p>
                     </div>
                 </div>
@@ -38,8 +30,9 @@
                         <p>
                             Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget
                             sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem
-                            sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor.
-                            Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin
+                            sapien, sed vestibulum velit. Nam purus nibh,
+                            lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi
+                                commodo sodales nisi id sodales. Proin
                                 consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam
                                 velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus.
                             <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices
@@ -54,10 +47,13 @@
                                 Pengurus
                             </h3>
                             <p class="text-center">Berikut ini merupakan pengurus dibalik setiap kesuksesan acara
-                                Bogrades</p>
+                                Bogrades
+                            </p>
                             <div class="row people">
-                                <div class="col-md-6 col-lg-4 item">
-                                    <div class="box"><img class="rounded-circle" src="{% static 'img/bayu.jpg' %}">
+                                <div class="col-md-4 item">
+                                    <div class="box"><img class="rounded-circle"
+                                            style="height: 100%; width: 100%; resize: both"
+                                            src="{% static 'img/kangaldo.jpg' %}">
                                         <h4 class="name">Aldo Picaso</h4>
                                         <p class="title">Pendiri Bogrades</p>
                                         <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
@@ -65,8 +61,10 @@
                                                     class="fa fa-instagram"></i></a></div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4 item">
-                                    <div class="box"><img class="rounded-circle" src="{% static 'img/bayu.jpg' %}">
+                                <div class="col-md-4 item">
+                                    <div class="box"><img class="rounded-circle"
+                                            style="height: 100%; width: 100%; resize: both"
+                                            src="{% static 'img/kangbayu.jpg' %}">
                                         <h4 class="name">Bayu Hadiputra</h4>
                                         <p class="title">Admin Bogrades</p>
                                         <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
@@ -74,8 +72,10 @@
                                                     class="fa fa-instagram"></i></a></div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4 item">
-                                    <div class="box"><img class="rounded-circle" src="{% static 'img/bayu.jpg' %}">
+                                <div class="col-md-4 item">
+                                    <div class="box"><img class="rounded-circle"
+                                            style="height: 100%; width: 100%; resize: both"
+                                            src="{% static 'img/bogrades.jpg' %}">
                                         <h4 class="name">Yoga Pradana</h4>
                                         <p class="title">Pengurus Bogrades</p>
                                         <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
@@ -83,18 +83,22 @@
                                                     class="fa fa-instagram"></i></a></div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4 item">
-                                    <div class="box"><img class="rounded-circle" src="{% static 'img/bayu.jpg' %}">
-                                        <h4 class="name">Yoga Pradana</h4>
+                                <div class="col-md-4 item">
+                                    <div class="box"><img class="rounded-circle"
+                                            style="height: 100%; width: 100%; resize: both"
+                                            src="{% static 'img/kangbudhy.jpg' %}">
+                                        <h4 class="name">Budhie Permana</h4>
                                         <p class="title">Pengurus Bogrades</p>
                                         <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
                                                 href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
                                                     class="fa fa-instagram"></i></a></div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-4 item">
-                                    <div class="box"><img class="rounded-circle" src="{% static 'img/bayu.jpg' %}">
-                                        <h4 class="name">Yoga Pradana</h4>
+                                <div class="col-md-4 item">
+                                    <div class="box"><img class="rounded-circle"
+                                            style="height: 100%; width: 100%; resize: both"
+                                            src="{% static 'img/dika.jpg' %}">
+                                        <h4 class="name">Andhika Setiawan</h4>
                                         <p class="title">Pengurus Bogrades</p>
                                         <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a
                                                 href="#"><i class="fa fa-twitter"></i></a><a href="#"><i
@@ -109,12 +113,12 @@
         </div>
     </div>
 </div>
-<div class="row container-fluid text-center">
+<!-- <div class="row container-fluid text-center">
     <div class="col-md-12">
         <address>
             <strong>Twitter, Inc.</strong><br /> 795 Folsom Ave, Suite 600<br /> San Francisco, CA
             94107<br /> <abbr title="Phone">P:</abbr> (123) 456-7890
         </address>
-    </div>
+    </div> -->
 </div>
 {% endblock %}

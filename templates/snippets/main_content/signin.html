@@ -1,0 +1,47 @@
+{% load static %}
+<div style="padding-top: 20px" id="signin">
+    <div style="padding: 40px; background-color: #11af8f;">
+        <div class="container text-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6" style="padding: 10%">
+                                <h3 style="text-align:left; font-weight: bold">MEMBER</h3>
+                                <h3 style="text-align:left; font-weight: bold">LOGIN</h3>
+                                <p style="margin-top: 20px; text-align: left">
+                                    Silahkan login untuk dapat mengakses<br>
+                                    halaman - halaman ekslusif untuk anggota.
+                                </p>
+                                <p style="margin-top:20 px; text-align: left">
+                                    <a href="#" style="color: #fff">Lupa Password?</a>
+                                </p>
+                            </div>
+                            <div class="col-md-6" style="background-color:#fff; width: 50%; height:300px;">
+                                <h4 style="padding-top: 5%">Member Login</h4>
+                                <form action="{% url 'dashboard:dashboard_index' %}" style="padding: 5%" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <input type="username" placeholder="username" class="form-control"
+                                            id="exampleInputUsername" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" placeholder="password" class="form-control"
+                                            id="exampleInputPassword1" />
+                                    </div>
+                                    <button type="submit" class="btn btn-primary form-control">
+                                        Submit
+                                    </button>
+                                </form>
+                                <br><br>
+                                <p style="text-align:left">Belum menjadi member?
+                                    <a href="{% url 'user_register' %}" style="color:#fff">Daftar</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

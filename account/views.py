@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import AccountForm
 from .models import AccountData
+from django.contrib import auth
 
 def user_register(request):
     # if this is a POST request we need to process the form data
@@ -58,15 +59,17 @@ def user_register(request):
                 # user.upload_foto_diri = form.cleaned_data['upload_foto_diri']
                 # user.upload_portofolio = form.cleaned_data['upload_portofolio']
                 user.save()
-               
-                # Login the user
-                # login(request, user)
+                user = auth.authenticate(request, username='username', password='password')
+                if user is not None:
+                    auth.login(request, user)
                
                 # redirect to accounts page:
-                return HttpResponseRedirect('register')
+                return HttpResponseRedirect('login.html')
 
    # No post data availabe, let's just show the page.
     else:
         form = AccountForm()
 
     return render(request, template, {'form': form})
+
+    

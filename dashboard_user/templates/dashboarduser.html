@@ -1,11 +1,5 @@
 {% extends "base.html" %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
-{% endif %}
+{% block page_content_1 %}
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
@@ -42,3 +36,6 @@
         </div>
     </div>
 </div>
+<p>You are not logged in</p>
+<a href="{% url 'main_index' %}">login</a>
+{% endblock %}

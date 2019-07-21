@@ -1,5 +1,5 @@
 {% load static %}
-<div style="padding-top: 20px;">
+<div style="padding-top: 20px;" id="pendaftaran">
     <div style="background-color: #11af8f; padding: 5%;">
         <div class="container">
             <div class="container-fluid">
@@ -7,14 +7,16 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-9 text-center">
-                                <h4>
+                                <h4 style="color:white">
                                     Ingin mendaftar menjadi member Bogrades?
                                 </h4>
                             </div>
-                            <div class="col-md-3">
-                                <button type="button" class="btn btn-success">
+                            <div class="col-md-2">
+                                    <a class="btn btn-primary" style="border-radius:25px; padding-left:20px; padding-right:20px; background-color: white; border: none; color: #11af8f; font-weight: bold" href="{% url 'user_register' %}" role="button">Ya, Daftar</a>
+                                <!-- <button formaction="{% url 'user_register' %}" type="button" class="btn btn-success"
+                                    style="border-radius: 30px; background-color: white; color: #11af8f; font-weight: bold; border: none">
                                     Ya, Daftar
-                                </button>
+                                </button> -->
                             </div>
                         </div>
                     </div>

@@ -1,11 +1,12 @@
 {% load static %}
-<div style="padding-top: 20px">
+<div style="padding-top: 20px" id="memberbogrades">
     <div style="background-color:#f3f3f3;">
         <div class="container text-center"
             style="margin-top:20px; margin-bottom: 20px; padding-top:50px; padding-bottom:50px;">
             <h4 class="display-5">Member Bogrades</h4>
-            <h5 class="display-5"><a href="#">Showcase</a>/<a href="#">Digital Painting</a>/<a href="#">Drawing</a>
+            <h5 class="display-5" ><a href="#" style="color: #11af8f">Showcase</a>/<a href="#" style="color: #11af8f">Digital Painting</a>/<a href="#" style="color: #11af8f">Drawing</a>
             </h5>
+            <br>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -14,24 +15,22 @@
                                 <div class="row">
 
                                     {% for project in projects %}
+                                    <div class="col-md-3">
+                                        <a href="{% url 'project_detail' project.pk %}">
+                                            <div class="card mb-3">
 
-                                    <div class="col-md-4">
+                                                <img class="card-img-top" src="{{ project.image.url }}">
 
-                                        <div class="card mb-2">
+                                                <div class="card-body" style="text-decoration: none; color: #11af8f">
 
-                                            <img class="card-img-top" src="{% static project.image %}">
+                                                    <h6 class="card-title" style="font-weight:bold">{{ project.title }}</h6>
 
-                                            <div class="card-body">
+                                                    <p class="card-text">{{ project.description }}</p>
+                                                </div>
 
-                                                <h5 class="card-title">{{ project.title }}</h5>
-
-                                                <p class="card-text">{{ project.description }}</p>
                                             </div>
-
-                                        </div>
-
+                                        </a>
                                     </div>
-
                                     {% endfor %}
 
                                 </div>
@@ -39,8 +38,9 @@
                         </div>
                     </div>
                 </div>
+                <br>
                 <p class="lead">
-                    <a class="btn btn-primary btn-lg" style="border-radius:25px; padding-left:20px; padding-right:20px;"
+                    <a class="btn btn-primary btn-lg" style="border-radius:20px; padding-left:20px; padding-right:20px;"
                         href="{% url 'project_index' %}" role="button">Browse</a>
                 </p>
             </div>

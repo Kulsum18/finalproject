@@ -1,16 +1,36 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block title %}
-    Your Shopping Cart| Thank you
-{% endblock %}
+{% include "snippets/styles.html" %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<div class="container">
+    <div class="col-md-12">
+        <ul class="nav justify-content-end">
+            <li class="nav-item active">
+                <a href="https://www.facebook.com/bogrades/" target="_blank" class="fa fa-facebook nav-link"></a>
+            </li>
+            <li class="nav-item active">
+                <a href="#" class="fa fa-twitter nav-link"></a>
+            </li>
+            <li class="nav-item active">
+                <a href="https://www.instagram.com/bogrades.id/?hl=id" target="_blank"
+                    class="fa fa-instagram nav-link"></a>
+            </li>
+            <li class="nav-item active">
+                <a href="https://www.youtube.com/channel/UC1cpd52lW0kfSOXUK1N1VvQ/" target="_blank"
+                    class="fa fa-youtube nav-link"></a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% include "snippets/navbar.html" %}
 {% block page_content_1 %}
     <div class="container">
         <div class="row" style="margin-top: 6%">
             <div class="col-md-8 col-md-offset-2">
-                <h3 class="page-header">Thank You For Shopping With Us
+                <h3 class="page-header">Terima kasih telah membeli Produk Bogrades
                 </h3>
-                <p>Your order has been successfully completed. Your order number is <strong>{{ order.id }}</strong>.</p>
+                <p>Pesanan Anda berhasil dibuat. Order number id Anda adalah <strong>{{ order.id }}</strong>.</p>
+                <p>Harap mengingat order number id Anda. Admin akan segera menghubungi untuk menyelesaikan transaksi pembayaran</p>
             </div>
         </div>
     </div>

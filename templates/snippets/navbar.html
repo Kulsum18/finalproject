@@ -2,11 +2,12 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="{% url 'main_index' %}">
-            <img src="{% static '/img/logo.png' %}" width="120" height="40" alt="">
+            <img src="{% static '/img/logo.png' %}" width="120" height="35" alt="">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
@@ -14,13 +15,13 @@
                     <a class="nav-link" href="{% url 'main_index' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#tentang_kami">Tentang Kami</a>
+                    <a class="nav-link" href="#tentang_kami">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#memberbogrades">Member</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#gallery">Galeri</a>
+                    <a class="nav-link" href="#gallery">Gallery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#pendaftaran">Membership</a>
@@ -29,12 +30,14 @@
                     <a class="nav-link" href="#merchandise">Bogrades Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#section_artikel">Artikel</a>
+                    <a class="nav-link" href="#blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <form class="form-inline">
+                        <a class="btn btn-sm btn-outline-secondary my-2 my-sm-0" href="#signin">Login</a>
+                    </form>
                 </li>
             </ul>
-            <form class="form-inline">
-                <a class="btn btn-sm btn-outline-secondary my-2 my-sm-0" href="#signin">Login</a>
-            </form>
         </div>
     </div>
 </nav>

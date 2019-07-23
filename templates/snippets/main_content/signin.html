@@ -18,14 +18,14 @@
                                 </p>
                             </div>
                             <div class="col-md-6" style="background-color:#fff; width: 50%; height:300px;">
-                                <h4 style="padding-top: 5%">Member Login</h4>
-                                <form action="{% url 'dashboard:dashboard_index' %}" style="padding: 5%" method="POST">
+                                <h4 style="padding-top: 7%">Member Login</h4>
+                                <form action="{% url 'login' %}" style="padding: 5%" method="POST">
                                     {% csrf_token %}
                                     <div class="form-group">
                                         <input type="username" placeholder="username" class="form-control"
                                             id="exampleInputUsername" />
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group" method='POST'>
                                         <input type="password" placeholder="password" class="form-control"
                                             id="exampleInputPassword1" />
                                     </div>

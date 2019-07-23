@@ -1,9 +1,10 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from .forms import AccountForm
 from .models import AccountData
-from django.contrib import auth
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 def user_register(request):
     # if this is a POST request we need to process the form data
@@ -59,12 +60,11 @@ def user_register(request):
                 # user.upload_foto_diri = form.cleaned_data['upload_foto_diri']
                 # user.upload_portofolio = form.cleaned_data['upload_portofolio']
                 user.save()
-                user = auth.authenticate(request, username='username', password='password')
+                user = authenticate(username='username', password='password')
                 if user is not None:
-                    auth.login(request, user)
-               
-                # redirect to accounts page:
-                return HttpResponseRedirect('login.html')
+                    login(request, user)
+                return HttpResponse("Registrasi berhasil")
+                # redirect to accounts page
 
    # No post data availabe, let's just show the page.
     else:

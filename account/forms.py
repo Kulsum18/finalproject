@@ -68,3 +68,7 @@ class AccountForm(forms.Form):
     harapan_gabung_bogrades = forms.CharField(widget=forms.Textarea)
     # upload_foto_diri = forms.ImageField()
     # upload_portofolio = forms.ImageField()
+
+    def save(self, commit=True):
+        user = super(AccountForm, self).save(commit=False)
+        user

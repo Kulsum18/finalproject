@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from django.views.generic import TemplateView
 
 from . import views
 
@@ -28,8 +29,9 @@ urlpatterns = [
     path('projects/', include("projects.urls")),
     path('galerifoto/', include("galerifoto.urls")),
     path('account/', include("account.urls")),
-    path('login/', auth_views.LoginView, {'template_name': 'login.html'}, name='login'),
-    path('logout/', auth_views.LogoutView, {'template_name': 'logged_out.html'}, name='logout'),
+    path('login', auth_views.LoginView, {'template_name': 'personal_portofolio/login.html'}, name='login'),
+    # path('login/', auth_views.LoginView, {'template_name': 'signin.html'}, name='login'),
+    # path('logout/', auth_views.LogoutView, {'template_name': 'dashboarduser.html'}, name='logout'),
     path('blog/', include("blog.urls")),
     path('cart', include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),

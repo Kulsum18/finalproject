@@ -5,7 +5,7 @@ from blog.models import Post
 from galerifoto.models import GaleriPost
 from bogrades_shop.models import Product
 from bogrades_shop.models import Category
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.views.generic import View
 
 
 def index(request):
@@ -23,38 +23,78 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
-    def login_request(request):
-        form = AuthenticationForm()
-    return render(request=request,
-                  template_name="login.html",
-                  context={"form": form})
+    # def login_request(request):
+    #     form = AuthenticationForm()
+    # return render(request=request,
+    #               template_name="dashboarduser.html",
+    #               context={"form": form})
 
+class LoginView(View):
+    def post(self, request):
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
 
-def logout_request(request):
-    logout(request)
-    messages.info(request, "Logged out successfully!")
-    return redirect("main_index")
-
-
-def login_request(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request=request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
+        if user is not None:
+            if user.is_active:
                 login(request, user)
-                messages.info(request, f"You are now logged in as {username}")
-                return redirect('/')
+
+                return HttpResponseRedirect('dashboard_index')
             else:
-                messages.error(request, "Invalid username or password.")
+                return HttpResponse("Inactive user.")
         else:
-            messages.error(request, "Invalid username or password.")
-    form = AuthenticationForm()
-    return render(request=request,
-                  template_name="login.html",
-                  context={"form": form})
+            return HttpResponseRedirect(settings.LOGIN_URL)
+
+        return render(request, "main_index")
+
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return HttpResponseRedirect(settings.LOGIN_URL)
+    
+# def login(request):
+#     username='not logged in'
+#     if request.method == 'POST':
+#         MyLoginForm = LoginForm(request.POST)
+#         if MyLoginForm.is_valid():
+#             username = MyLoginForm.cleaned_data['username']
+#             request.session['username'] = username
+#         else:
+#             MyLoginForm = LoginForm()
+#     return render(request, 'dashboarduser.html', {"username":username})
+
+# def formView(request):
+#     if request.session.has_key('username'):
+#         username = request.session['username']
+#         return render(request, 'dashboarduser.html', {"username":username})
+#     else:
+#         return render(request, 'signin.html', {})
+        
+# def logout_request(request):
+#     logout(request)
+#     messages.info(request, "Logged out successfully!")
+#     return redirect("main_index")
+
+
+# def login_request(request):
+#     if request.method == 'POST':
+#         form = AuthenticationForm(request=request, data=request.POST)
+#         if form.is_valid():
+#             username = form.cleaned_data.get('username')
+#             password = form.cleaned_data.get('password')
+#             user = authenticate(username=username, password=password)
+#             if user is not None:
+#                 login(request, user)
+#                 messages.info(request, f"You are now logged in as {username}")
+#                 return redirect('/')
+#             else:
+#                 messages.error(request, "Invalid username or password.")
+#         else:
+#             messages.error(request, "Invalid username or password.")
+#     form = AuthenticationForm()
+#     return render(request=request,
+#                   template_name="login.html",
+#                   context={"form": form})
 
     # username = request.POST.get('username')
     # password = request.POST.get('password')

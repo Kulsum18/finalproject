@@ -13,11 +13,11 @@
             </a>&nbsp;
             {% endfor %}
         </small>
-        <div class="container" style="height: 100%; width: 100%; resize: both">
+        <div style="height: 100%; width: 100%; resize: both">
             <img src="{{ post.image.url }}">
         </div>
         
-        <p>{{ post.body | linebreaks }}</p>
+        <p >{{ post.body | linebreaks }}</p>
         <h3>Leave a comment:</h3>
         <form action="/blog/{{ post.pk }}/" method="post">
             {% csrf_token %}

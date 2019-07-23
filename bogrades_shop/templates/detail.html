@@ -1,6 +1,27 @@
-{% extends 'base.html' %}
 {% load static %}
 {% block page_content_1 %}
+{% include "snippets/styles.html" %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container">
+  <div class="col-md-12">
+    <ul class="nav justify-content-end">
+      <li class="nav-item active">
+        <a href="https://www.facebook.com/bogrades/" target="_blank" class="fa fa-facebook nav-link"></a>
+      </li>
+      <li class="nav-item active">
+        <a href="#" class="fa fa-twitter nav-link"></a>
+      </li>
+      <li class="nav-item active">
+        <a href="https://www.instagram.com/bogrades.id/?hl=id" target="_blank" class="fa fa-instagram nav-link"></a>
+      </li>
+      <li class="nav-item active">
+        <a href="https://www.youtube.com/channel/UC1cpd52lW0kfSOXUK1N1VvQ/" target="_blank" class="fa fa-youtube nav-link"></a>
+      </li>
+    </ul>
+  </div>
+</div>
+{% include "snippets/navbar.html" %}
 <br>
 <div class="container">
     <div class="col-sm-12 blog-main">
@@ -16,7 +37,7 @@
                 </div>
                 <div class="col-md-6" style="padding-left: 20px">
                     <h3>{{ product.name }}</h3>
-                    <h6><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h6>
+                    <h6><a href="{{ product.category.get_absolute_url }}"></a></h6>
                     <p class="text-muted">Rp. {{ product.price }}</p>
                     <form action="{% url 'cart:cart_add' product.id %}" method="post">
                         {% csrf_token %}

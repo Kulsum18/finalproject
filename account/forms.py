@@ -69,6 +69,6 @@ class AccountForm(forms.Form):
     # upload_foto_diri = forms.ImageField()
     # upload_portofolio = forms.ImageField()
 
-    def save(self, commit=True):
-        user = super(AccountForm, self).save(commit=False)
-        user
+    # def save(self, commit=True):
+    #     user = super(AccountForm, self).save(commit=False)
+    #     user

@@ -2,24 +2,20 @@
 {% block page_content_1 %}
 <div class="container-fluid">
     <div class="row">
-        {% if user.is_authenticate %}
+        {% if user.is_authenticated %}
         Hi {{ user.username }}!
-        {% else %}
-        <p>You are not logged in</p>
-        <a href="{% url 'main_index' %}">login</a>
-        {% endif %}
         <div class="col-md-12">
             <div class="jumbotron">
                 <h3>
                     Upload Foto dan Portofolio
                 </h3>
-                <div class="form-group clearfix">
+                <!-- <div class="form-group clearfix">
                     <label for="{{ form.upload_foto_diri.id_for_label }}"
                         class="col-md-4 control-label text-right">Upload Foto Diri:</label>
                     <div class="col-md-6">
                         {{ form.upload_foto_diri }}
                     </div>
-                </div>
+                </div> -->
                 <div class="form-group clearfix">
                     <label for="{{ form.upload_portofolio.id_for_label }}"
                         class="col-md-4 control-label text-right">Upload Portofolio:</label>
@@ -35,11 +31,12 @@
                 <h2>
                     Hello, world!
                 </h2>
-                <p>
-                    <a class="btn btn-primary btn-large" href="#">Learn more</a>
-                </p>
             </div>
         </div>
     </div>
+    {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">login</a>
+    {% endif %}
 </div>
 {% endblock %}

@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'tentangkami',
     'galerifoto',
-    'account',
+    'users',
+    #'account',
     'projects',
     'cart',
     'orders',
@@ -94,7 +95,7 @@ WSGI_APPLICATION = 'personal_portofolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bogrades-database',
+        'NAME': 'bogrades-db',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
@@ -150,10 +151,17 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_REDIRECT_URL = 'dashboard_user'
+AUTH_USER_MODEL = 'users.CustomUser'
 
-LOGIN_URL = '/signin/'
+LOGIN_REDIRECT_URL = 'dashboard:dashboard'
 
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'main_index'
+
+# LOGIN_REDIRECT_URL = 'dashboard_index'
+
+# LOGIN_URL = '/signin/'
+
+# LOGOUT_REDIRECT_URL = '/'
 
 CART_SESSION_ID = 'cart'
+

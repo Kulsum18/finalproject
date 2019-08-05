@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block page_content_1 %}
+<div style="padding-top: 20px" id="login">
+    <div style="padding: 40px; background-color: #11af8f;">
+        <div class="container text-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6" style="padding: 10%">
+                                <h3 style="text-align:left; font-weight: bold">MEMBER</h3>
+                                <h3 style="text-align:left; font-weight: bold">LOGIN</h3>
+                                <p style="margin-top: 20px; text-align: left">
+                                    Silahkan login untuk dapat mengakses<br>
+                                    halaman - halaman ekslusif untuk anggota.
+                                </p>
+                                <p style="text-align:left">Belum menjadi member?
+                                    <a href="{% url 'signup' %}" style="color:#fff">Daftar</a>
+                                </p>
+                                <!-- <p style="margin-top:20 px; text-align: left">
+                                    <a href="#" style="color: #fff">Lupa Password?</a>
+                                </p> -->
+                            </div>
+                            <div class="col-md-6" style="background-color:#fff; width: 50%; height:330px">
+                                <h4 style="padding-top: 7%; font-weight: bold">Member Login</h4>
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    {{ form|crispy }}
+                                    <input type="submit" value="Login" class="btn btn-success" style="width:100%">
+                                    <br><br>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

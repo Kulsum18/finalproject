@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-def dashboard_index(request):
+def dashboard(request):
     
     return render(request, 'dashboarduser.html')
 

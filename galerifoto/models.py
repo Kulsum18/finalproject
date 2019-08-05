@@ -17,3 +17,6 @@ class GaleriPost(models.Model):
 
     def __str__(self):
         return self.title+": " +str(self.image)
+
+# class Photo(models.Model):
+#     image = models.ForeignKey(GaleriPost, on_delete=models.CASCADE, related_name='images')        

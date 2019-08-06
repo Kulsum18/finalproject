@@ -157,11 +157,5 @@ LOGIN_REDIRECT_URL = 'dashboard:dashboard'
 
 LOGOUT_REDIRECT_URL = 'main_index'
 
-# LOGIN_REDIRECT_URL = 'dashboard_index'
-
-# LOGIN_URL = '/signin/'
-
-# LOGOUT_REDIRECT_URL = '/'
-
 CART_SESSION_ID = 'cart'
 

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_content_1 %}
+{% include 'alerts.html' %}
+
+<h3>{{ post.nama_project }}</h3>
+<hr>
+<p>{{ post.deskripsi_project }}</p>
+
+<div class="row gallery">
+  {% for p in post.images_set.all %}
+  {% if p.image %}
+  <div class="col-md-3">
+    <img src="{{ p.image.url }}" alt="Image Not Found" class="img-thumbnail">
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+{% if post.nama_project == request.user %}
+
+<div class="section-1" style="float:right;">
+  <a href="{% url 'dashboard:portofolio_delete' id=post.id %}" id="delete">
+    <button type="button" class="btn btn-danger">Delete</button>
+  </a>
+</div>
+{% endif %}
+<br><br>
+<hr>
+
+{% endblock %}

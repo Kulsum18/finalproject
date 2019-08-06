@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from projects.models import Portofolio
+from projects.models import Portofolio, Image
 from blog.models import Post
 from galerifoto.models import GaleriPost
 from bogrades_shop.models import Product
@@ -8,7 +8,7 @@ from bogrades_shop.models import Category
 from django.views.generic import View
 
 def index(request):
-    projects = Portofolio.objects.all()
+    projects = Image.objects.filter().order_by('position')
     posts = Post.objects.all()
     galeriposts = GaleriPost.objects.all()
     products = Product.objects.all()

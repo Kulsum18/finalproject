@@ -10,13 +10,13 @@ def validate_image(image):
         raise ValidationError("Ukuran file terlalu besar, batas maksimal 2 MB")
 
 class GaleriPost(models.Model):
-    title = models.CharField(max_length=100, null=True)
+    nama_kegiatan = models.CharField(max_length=100, blank=True, null=True)
     image = models.ImageField('Image', upload_to="images/", validators=[validate_image])
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.title+": " +str(self.image)
+        return self.nama_kegiatan+": " +str(self.image)
 
 # class Photo(models.Model):
 #     image = models.ForeignKey(GaleriPost, on_delete=models.CASCADE, related_name='images')        
